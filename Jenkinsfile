@@ -40,8 +40,6 @@ pipeline {
 }
 
 
-    }
-
     post {
         success {
             echo '✅ Build & Deployment successful!'
