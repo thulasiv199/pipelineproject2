@@ -28,14 +28,15 @@ pipeline {
             }
         }
 
-       stage('Deploy') {
+     stage('Deploy') {
     steps {
         sh '''
-        echo "Running Spring Boot JAR..."
+        echo "Starting Spring Boot app..."
         nohup java -jar target/*.jar > app.log 2>&1 &
         '''
     }
 }
+
 
     }
 
