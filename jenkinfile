@@ -10,7 +10,7 @@ pipeline {
 
         stage('Checkout') {
             steps {
-                git branch: 'main', 
+                git branch: 'main'
                     url: 'https://github.com/thulasiv199/pipelineproject2.git'
             }
         }
