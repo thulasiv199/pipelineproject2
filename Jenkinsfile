@@ -28,7 +28,7 @@ pipeline {
             }
         }
 
-    stage('Deploy') {
+   stage('Deploy') {
     steps {
         sh '''
         echo "Starting Spring Boot app..."
@@ -36,6 +36,7 @@ pipeline {
         '''
     }
 }
+
 
 }
 
