@@ -28,20 +28,15 @@ pipeline {
             }
         }
 
-        stage('Deploy') {
-            steps {
-                sh '''
-                echo "Stopping Tomcat..."
-                $CATALINA_HOME/bin/catalina.sh stop || true
+       stage('Deploy') {
+    steps {
+        sh '''
+        echo "Running Spring Boot JAR..."
+        nohup java -jar target/*.jar > app.log 2>&1 &
+        '''
+    }
+}
 
-                echo "Deploying WAR..."
-                cp target/*.war $CATALINA_HOME/webapps/
-
-                echo "Starting Tomcat..."
-                $CATALINA_HOME/bin/catalina.sh start
-                '''
-            }
-        }
     }
 
     post {
