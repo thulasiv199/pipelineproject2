@@ -4,6 +4,9 @@ pipeline {
     environment {
         CATALINA_HOME = "/usr/local/tomcat"   // change path if Tomcat is installed elsewhere
     }
+     tools {
+        maven 'maven-3.9.11'   // the name you configured in Jenkins tools
+    }
 
     stages {
         stage('Checkout') {
